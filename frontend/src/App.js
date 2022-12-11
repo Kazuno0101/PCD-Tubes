@@ -6,7 +6,7 @@ function App() {
 	return (
 		<>
 			<Navbar />
-			{/* <div className="my-10">
+			<div className="my-10">
 				<div className="flex flex-col w-2/3 mx-auto">
 					<div className="my-10 text-center">
 						<div className="px-4 sm:px-0">
@@ -102,9 +102,9 @@ function App() {
 						</form>
 					</div>
 				</div>
-			</div> */}
+			</div>
 
-			<div className="my-10">
+			{/* <div className="my-10">
 				<div className="flex flex-col w-full sm:w-2/3 mx-auto">
 					<div className="my-10 text-center">
 						<div className="px-4 sm:px-0">
@@ -176,7 +176,7 @@ function App() {
 													<div className="bg-white-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
 														<li className="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
 															<div className="flex w-0 flex-1 items-center">
-																{/* Heroicon name: mini/paper-clip */}
+
 																<svg
 																	className="h-5 w-5 flex-shrink-0 text-gray-400"
 																	xmlns="http://www.w3.org/2000/svg"
@@ -268,7 +268,7 @@ function App() {
 													<div className="bg-white-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
 														<li className="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
 															<div className="flex w-0 flex-1 items-center">
-																{/* Heroicon name: mini/paper-clip */}
+
 																<svg
 																	className="h-5 w-5 flex-shrink-0 text-gray-400"
 																	xmlns="http://www.w3.org/2000/svg"
@@ -313,7 +313,7 @@ function App() {
 						</form>
 					</div>
 				</div>
-			</div>
+			</div> */}
 		</>
 	);
 }
