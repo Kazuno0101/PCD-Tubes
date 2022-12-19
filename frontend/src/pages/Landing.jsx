@@ -8,7 +8,7 @@ const Landing = () => {
 							<div class="w-full pb-6 space-y-6 sm:max-w-md lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0 md:pb-0">
 								<h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
 									<span class="block xl:inline">Love</span>
-									<span class="block text-indigo-600 xl:inline">Colored.</span>
+									<span class="block text-indigo-600 xl:inline">Color.</span>
 								</h1>
 								<p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">Ubah foto lama Anda menjadi warna alami, berikan tampilan baru secara gratis..</p>
 								<div class="relative flex flex-col sm:flex-row sm:space-x-4">
@@ -32,7 +32,7 @@ const Landing = () => {
 				<div class="container px-5 py-24 mx-auto">
 					<div class="flex flex-col text-center w-full mb-20">
 						<h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Cara mewarnai foto hitam putih di</h2>
-						<h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">LoveColored.</h1>
+						<h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">LoveColor.</h1>
 					</div>
 					<div class="flex flex-wrap -m-4">
 						<div class="p-4 md:w-1/3">
@@ -83,7 +83,7 @@ const Landing = () => {
 				<div class="container px-5 py-24 mx-auto">
 					<div class="flex flex-col text-center w-full mb-20">
 						<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">TIM</h1>
-						<p class="lg:w-2/3 mx-auto leading-relaxed text-base">LoveColored dikembangkan Tim Keceh si Paling SKS:</p>
+						<p class="lg:w-2/3 mx-auto leading-relaxed text-base">LoveColor dikembangkan Tim Keceh si Paling SKS:</p>
 					</div>
 					<div class="flex flex-wrap -m-2">
 						<div class="p-2 lg:w-1/3 md:w-1/2 w-full">
@@ -189,8 +189,8 @@ const Landing = () => {
 				</div>
 				<div class="bg-gray-200">
 					<div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-						<p class="text-gray-500 text-sm text-center sm:text-left">© 2020 LoveColored. —
-							<a href="#!" class="text-gray-600 ml-1" target="_blank" rel="noopener noreferrer">@LoveColored.</a>
+						<p class="text-gray-500 text-sm text-center sm:text-left">© 2020 LoveColor. —
+							<a href="#!" class="text-gray-600 ml-1" target="_blank" rel="noopener noreferrer">@LoveColor.</a>
 						</p>
 						<span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">Arsal, Aqil, Nuno, Fadhil, Wili</span>
 					</div>
