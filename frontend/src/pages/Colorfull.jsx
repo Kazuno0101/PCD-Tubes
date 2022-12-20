@@ -9,8 +9,9 @@ const Colourfull = () => {
 	const [selectedFile, setSelectedFile] = useState(null);
 	const [after, setAfter] = useState(null);
 	const [loader, setLoader] = useState(false);
+	const [status, setStatus] = useState(true);
 
-	useEffect(() => { }, [statusGambar, setStatusGambar]);
+	useEffect(() => {}, [statusGambar, setStatusGambar]);
 
 	const handleGambarAgain = (event) => {
 		event.preventDefault();
@@ -34,29 +35,31 @@ const Colourfull = () => {
 	};
 
 	const onFileUpload = async () => {
-		// Create an object of formData
-		const formData = new FormData();
+		if (selectedFile != null && (selectedFile.type == 'mp4' || selectedFile.type == 'jpg')) {
+			// Create an object of formData
+			const formData = new FormData();
 
-		// Update the formData object
-		formData.append('file', selectedFile);
-		formData.append('name', 'colorfull');
+			// Update the formData object
+			formData.append('file', selectedFile);
+			formData.append('name', 'colorfull');
 
-		try {
-			setLoader(true);
-			const response = await axios({
-				method: 'post',
-				url: 'http://127.0.0.1:8000/api/files/',
-				data: formData,
-				headers: { 'Content-Type': 'multipart/form-data' },
-			});
-			console.log(response.data);
-			setLoader(false);
-			setAfter(response.data);
-		} catch (error) {
-			console.log(error);
+			try {
+				setLoader(true);
+				const response = await axios({
+					method: 'post',
+					url: 'http://127.0.0.1:8000/api/files/',
+					data: formData,
+					headers: { 'Content-Type': 'multipart/form-data' },
+				});
+				setLoader(false);
+				setAfter(response.data);
+			} catch (error) {
+				console.log(error);
+			}
+			setStatusGambar(!statusGambar);
+		} else {
+			alert('Harus memasukan gambar/video!');
 		}
-
-		setStatusGambar(!statusGambar);
 	};
 
 	const formatSizeUnits = (bytes) => {
@@ -124,6 +127,7 @@ const Colourfull = () => {
 								</p>
 							</div>
 						</div>
+
 						<div className="mt-5 md:mt-0">
 							<div className="shadow sm:overflow-hidden sm:rounded-md">
 								<div className="px-4 py-5 space-y-6 bg-white sm:p-6">
@@ -236,7 +240,7 @@ const Colourfull = () => {
 										<div className="flex items-center mt-1">
 											{formatExt() ==
 												'jpg' ||
-												formatExt() ==
+											formatExt() ==
 												'png' ? (
 												<img
 													src={formatBeforeImage()}
@@ -331,7 +335,7 @@ const Colourfull = () => {
 										<div className="flex items-center mt-1">
 											{formatExt() ==
 												'jpg' ||
-												formatExt() ==
+											formatExt() ==
 												'png' ? (
 												<img
 													src={formatAfterImageEccv()}
@@ -425,7 +429,7 @@ const Colourfull = () => {
 										<div className="flex items-center mt-1">
 											{formatExt() ==
 												'jpg' ||
-												formatExt() ==
+											formatExt() ==
 												'png' ? (
 												<img
 													src={formatAfterImageSiggraph()}

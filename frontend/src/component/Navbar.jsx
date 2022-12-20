@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
+	const location = useLocation();
 	return (
 		<nav className="bg-gray-800">
 			<div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -58,25 +59,51 @@ export default function Navbar() {
 						</div>
 						<div className="hidden sm:ml-6 sm:block">
 							<div className="flex space-x-4">
-								<Link
-									to="/"
-									className="px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md"
-									aria-current="page"
-								>
-									Home
-								</Link>
-								<Link
-									to="/colourfull"
-									className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
-								>
-									Colourfull
-								</Link>
-								<Link
-									to="/grayfull"
-									className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
-								>
-									Grayfull
-								</Link>
+								{location.pathname == '/' ? (
+									<Link
+										to="/"
+										className="px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md"
+									>
+										Home
+									</Link>
+								) : (
+									<Link
+										to="/"
+										className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
+									>
+										Home
+									</Link>
+								)}
+								{location.pathname == '/colourfull' ? (
+									<Link
+										to="/colourfull"
+										className="px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md"
+									>
+										Colourfull
+									</Link>
+								) : (
+									<Link
+										to="/colourfull"
+										className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
+									>
+										Colourfull
+									</Link>
+								)}
+								{location.pathname == '/grayfull' ? (
+									<Link
+										to="/grayfull"
+										className="px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md"
+									>
+										Grayfull
+									</Link>
+								) : (
+									<Link
+										to="/grayfull"
+										className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
+									>
+										Grayfull
+									</Link>
+								)}
 							</div>
 						</div>
 					</div>
