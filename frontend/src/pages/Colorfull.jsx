@@ -373,7 +373,7 @@ const Colourfull = () => {
 															Ekstensi
 														</dt>
 														<dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-															{formatExt()}
+															image/png
 														</dd>
 													</div>
 													<div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -467,7 +467,7 @@ const Colourfull = () => {
 															Ekstensi
 														</dt>
 														<dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-															{formatExt()}
+															image/png
 														</dd>
 													</div>
 													<div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

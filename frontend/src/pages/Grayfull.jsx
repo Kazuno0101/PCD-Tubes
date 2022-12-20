@@ -81,7 +81,11 @@ const Grayfull = () => {
 	};
 
 	const formatAfter = () => {
-		return after.file.replace('static', 'media/static').replace('.jpg', '_grayfull.jpg');
+		if (after.file.includes('.jpg')) {
+			return after.file.replace('static', 'media/static').replace('.jpg', '_grayfull.jpg');
+		} else {
+			return after.file.replace('static', 'media/static').replace('.mp4', '_grayfulla.mp4');
+		}
 	};
 
 	const formatExt = () => {
@@ -116,7 +120,7 @@ const Grayfull = () => {
 									Pengolahan Citra Digital
 								</h3>
 								<p className="mt-1 text-sm text-gray-600">
-									Kelompok 10 - Penebakan Warna Grayfull
+									Kelompok 10 - Penebakan Warna Grayfulla
 								</p>
 							</div>
 						</div>
@@ -241,13 +245,10 @@ const Grayfull = () => {
 												/>
 											) : (
 												<video
-													className="bg-center bg-cover w-96 h-96"
+													className="bg-center bg-cover w-96 h-96" src={formatBeforeImage()}
 													controls
 												>
-													<source
-														src={formatBeforeImage()}
-														type="video/mp4"
-													/>
+													Your browser does not support the video tag.
 												</video>
 											)}
 										</div>
@@ -302,17 +303,12 @@ const Grayfull = () => {
 													<div className="px-4 py-5 bg-white-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
 														<li className="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
 															<div className="flex-shrink-0 ml-4">
-																<button
-																	onClick={() => {
-																		handleDownload(
-																			formatBeforeImage(),
-																			after.name
-																		);
-																	}}
-																	className="font-medium text-indigo-600 hover:text-indigo-500"
+																<a
+																	href={formatBeforeImage()}
+																	className="font-medium text-indigo-600 hover:text-indigo-500" target="_blank" rel="noreferrer" download
 																>
 																	Download
-																</button>
+																</a>
 															</div>
 														</li>
 													</div>
@@ -336,13 +332,10 @@ const Grayfull = () => {
 												/>
 											) : (
 												<video
-													className="bg-center bg-cover w-96 h-96"
+													className="bg-center bg-cover w-96 h-96 bg-red" src={formatAfter()}
 													controls
 												>
-													<source
-														src={formatAfter()}
-														type="video/mp4"
-													/>
+													Your browser does not support the video tag.
 												</video>
 											)}
 										</div>
@@ -369,7 +362,7 @@ const Grayfull = () => {
 															Ekstensi
 														</dt>
 														<dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-															{formatExt()}
+															video/avi
 														</dd>
 													</div>
 													<div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -396,17 +389,12 @@ const Grayfull = () => {
 													<div className="px-4 py-5 bg-white-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
 														<li className="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
 															<div className="flex-shrink-0 ml-4">
-																<button
-																	onClick={() => {
-																		handleDownload(
-																			formatAfter(),
-																			after.name
-																		);
-																	}}
-																	className="font-medium text-indigo-600 hover:text-indigo-500"
+																<a
+																	href={formatAfter()}
+																	className="font-medium text-indigo-600 hover:text-indigo-500" target="_blank" rel="noreferrer" download
 																>
 																	Download
-																</button>
+																</a>
 															</div>
 														</li>
 													</div>
