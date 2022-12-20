@@ -32,10 +32,11 @@ const Colourfull = () => {
 	const onFileChange = (event) => {
 		// Update the state
 		setSelectedFile(event.target.files[0]);
+		console.log(selectedFile);
 	};
 
 	const onFileUpload = async () => {
-		if (selectedFile != null && (selectedFile.type == 'mp4' || selectedFile.type == 'jpg')) {
+		if (selectedFile != null && (selectedFile.type == 'video/mp4' || selectedFile.type == 'image/jpeg') && (selectedFile.size <= (1048576 * 10))) {
 			// Create an object of formData
 			const formData = new FormData();
 
@@ -58,7 +59,7 @@ const Colourfull = () => {
 			}
 			setStatusGambar(!statusGambar);
 		} else {
-			alert('Harus memasukan gambar/video!');
+			alert('Harus memasukan gambar/video dan kurang dari 10Mb!');
 		}
 	};
 
@@ -88,7 +89,11 @@ const Colourfull = () => {
 	};
 
 	const formatAfterImageSiggraph = () => {
-		return after.file.replace('static', 'media/static').replace('.jpg', '_siggraph17.png');
+		if (after.file.includes('.jpg')) {
+			return after.file.replace('static', 'media/static').replace('.jpg', '_siggraph17.png');
+		} else {
+			return after.file.replace('static', 'media/static').replace('.mp4', '_colorfulla.mp4');
+		}
 	};
 
 	const formatExt = () => {
@@ -313,7 +318,7 @@ const Colourfull = () => {
 																<a
 																	href={formatBeforeImage()}
 																	className="font-medium text-indigo-600 hover:text-indigo-500"
-																	target="_blank"
+																	target="_blank" rel="noreferrer" 
 																	download
 																>
 																	Download
@@ -325,6 +330,7 @@ const Colourfull = () => {
 											</div>
 										</div>
 									</div>
+									{selectedFile.type == 'image/jpeg' &&(
 									<div className="flex flex-col items-center justify-center w-full sm:w-1/3">
 										<label className="block text-sm font-medium text-gray-700">
 											After ECCV
@@ -374,7 +380,7 @@ const Colourfull = () => {
 															Ekstensi
 														</dt>
 														<dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-															image/png
+															{formatExt()}
 														</dd>
 													</div>
 													<div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -404,7 +410,7 @@ const Colourfull = () => {
 																<a
 																	href={formatAfterImageEccv()}
 																	className="font-medium text-indigo-600 hover:text-indigo-500"
-																	target="_blank"
+																	target="_blank" rel="noreferrer" 
 																	download
 																>
 																	Download
@@ -416,6 +422,7 @@ const Colourfull = () => {
 											</div>
 										</div>
 									</div>
+									)}
 									<div className="flex flex-col items-center justify-center w-full sm:w-1/3">
 										<label className="block text-sm font-medium text-gray-700">
 											After Siggraph
@@ -465,7 +472,7 @@ const Colourfull = () => {
 															Ekstensi
 														</dt>
 														<dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-															image/png
+															{formatExt()}
 														</dd>
 													</div>
 													<div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -495,7 +502,7 @@ const Colourfull = () => {
 																<a
 																	href={formatAfterImageSiggraph()}
 																	className="font-medium text-indigo-600 hover:text-indigo-500"
-																	target="_blank"
+																	target="_blank" rel="noreferrer" 
 																	download
 																>
 																	Download
