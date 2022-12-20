@@ -306,17 +306,14 @@ const Colourfull = () => {
 													<div className="px-4 py-5 bg-white-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
 														<li className="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
 															<div className="flex-shrink-0 ml-4">
-																<button
-																	onClick={() => {
-																		handleDownload(
-																			formatBeforeImage(),
-																			after.name
-																		);
-																	}}
+																<a
+																	href={formatBeforeImage()}
 																	className="font-medium text-indigo-600 hover:text-indigo-500"
+																	target="_blank"
+																	download
 																>
 																	Download
-																</button>
+																</a>
 															</div>
 														</li>
 													</div>
@@ -400,17 +397,14 @@ const Colourfull = () => {
 													<div className="px-4 py-5 bg-white-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
 														<li className="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
 															<div className="flex-shrink-0 ml-4">
-																<button
-																	onClick={() => {
-																		handleDownload(
-																			formatAfterImageEccv(),
-																			after.name
-																		);
-																	}}
+																<a
+																	href={formatAfterImageEccv()}
 																	className="font-medium text-indigo-600 hover:text-indigo-500"
+																	target="_blank"
+																	download
 																>
 																	Download
-																</button>
+																</a>
 															</div>
 														</li>
 													</div>
@@ -494,17 +488,14 @@ const Colourfull = () => {
 													<div className="px-4 py-5 bg-white-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
 														<li className="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
 															<div className="flex-shrink-0 ml-4">
-																<button
-																	onClick={() => {
-																		handleDownload(
-																			formatAfterImageSiggraph(),
-																			after.name
-																		);
-																	}}
+																<a
+																	href={formatAfterImageSiggraph()}
 																	className="font-medium text-indigo-600 hover:text-indigo-500"
+																	target="_blank"
+																	download
 																>
 																	Download
-																</button>
+																</a>
 															</div>
 														</li>
 													</div>
