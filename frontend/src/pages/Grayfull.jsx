@@ -10,7 +10,7 @@ const Grayfull = () => {
 	const [after, setAfter] = useState(null);
 	const [loader, setLoader] = useState(false);
 
-	useEffect(() => {}, [statusGambar, setStatusGambar]);
+	useEffect(() => { }, [statusGambar, setStatusGambar]);
 
 	const handleGambarAgain = (event) => {
 		event.preventDefault();
@@ -157,7 +157,8 @@ const Grayfull = () => {
 												<p className="text-xs text-gray-500">
 													PNG,
 													JPG,
-													GIF
+													MP4,
+													AVI
 													up
 													to
 													10MB
@@ -217,7 +218,7 @@ const Grayfull = () => {
 									Pengolahan Citra Digital
 								</h3>
 								<p className="mt-1 text-sm text-gray-600">
-									Kelompok 10 - Penebakan Warna Grayfull
+									Kelompok 10 - Warna Grayfull Pada Gambar
 								</p>
 							</div>
 						</div>
@@ -231,7 +232,7 @@ const Grayfull = () => {
 										<div className="flex items-center mt-1">
 											{formatExt() ==
 												'jpg' ||
-											formatExt() ==
+												formatExt() ==
 												'png' ? (
 												<img
 													src={formatBeforeImage()}
@@ -326,7 +327,7 @@ const Grayfull = () => {
 										<div className="flex items-center mt-1">
 											{formatExt() ==
 												'jpg' ||
-											formatExt() ==
+												formatExt() ==
 												'png' ? (
 												<img
 													src={formatAfter()}
